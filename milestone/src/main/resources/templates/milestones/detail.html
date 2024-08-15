@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>マイルストーン | マイルストーンアプリケーション</title>
+</head>
+<body>
+<h1>マイルストーン</h1>
+<a href="./milestones/list.html" th:href="@{/milestones}">戻る</a>
+<h2 th:text="${milestoneDetail.milestone}"></h2>
+<p th:text="${milestoneDetail.description}"></p>
+</body>
+</html>

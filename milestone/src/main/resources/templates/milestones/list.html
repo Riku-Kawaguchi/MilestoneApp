@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>マイルストーン | マイルストーンアプリケーション</title>
+	</head>
+	
+	<body>
+	<h1>マイルストーン</h1>
+	<a href="../index.html" th:href="@{/}">トップページ</a>
+	<a href="../createForm.html" th:href="@{/create}">作成</a>
+	
+	<table>
+	   <thead>
+	    <tr>
+	         <th>#</th>
+	        <th>マイルストーン</th>
+	    </tr>
+	    </thead>
+		
+	    <tbody>
+			<tr th:each="milestone: ${milestoneList}">
+				<td th:text="${milestone.id}"></td>
+				
+			        <td>
+						<a href="../detail.html" th:href="@{/{id}(id=${milestone.id})}" th:text="${milestone.milestone}">
+						</a>
+					</td>
+					
+					<td>
+						<form th:action="@{/{id}(id=${milestone.id})}" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<button type="submit">削除</button>
+						</form>
+					</td>
+			 </tr>
+	    </tbody>
+		
+	</table>
+	
+	</body>
+	
+</html>

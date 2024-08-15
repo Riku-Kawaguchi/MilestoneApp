@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>作成画面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	
+	<body>
+		<h1>マイルストーンアプリケーション</h1>
+		<a href="./milestones/list.html" th:href="@{/milestones}">戻る</a>
+		<form th:action="@{/create}" th:object="${milestoneCreate}" method="post">
+			<label>概要</label>
+			<p><input type="text" th:field="*{milestone}" /></p>
+			<label>説明</label>
+			<p><textarea id="form" th:field="*{description}"></textarea></p>
+			<p><input type="submit" value="作成" id="button" /></p>
+		</form>
+	</body>
+	
+</html>
